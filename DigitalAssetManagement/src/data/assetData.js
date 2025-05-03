@@ -8,7 +8,7 @@ export const assets = [
     purchaseDate: '2022-06-15',
     warrantyExpiry: '2025-06-15',
     value: 5000,
-    usageType: 'Personal',
+    usage: 'Personal',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const assets = [
     purchaseDate: '2021-06-11',
     warrantyExpiry: '2024-06-11',
     value: 4300,
-    usageType: 'Personal',
+    usage: 'Personal',
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const assets = [
     purchaseDate: '2022-05-20',
     warrantyExpiry: '2025-05-20',
     value: 7000,
-    usageType: 'Critical',
+    usage: 'Critical',
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const assets = [
     purchaseDate: '2023-06-10',
     warrantyExpiry: '2026-06-10',
     value: 9000,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
 
   {
@@ -53,7 +53,7 @@ export const assets = [
     purchaseDate: '2021-02-15',
     warrantyExpiry: '2024-02-15',
     value: 4500,
-    usageType: 'Shared',
+    usage: 'Shared',
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ export const assets = [
     purchaseDate: '2022-09-10',
     warrantyExpiry: '2025-09-10',
     value: 4800,
-    usageType: 'Personal',
+    usage: 'Personal',
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ export const assets = [
     purchaseDate: '2023-04-05',
     warrantyExpiry: '2026-04-05',
     value: 8200,
-    usageType: 'Critical',
+    usage: 'Critical',
   },
   {
     id: 8,
@@ -86,7 +86,7 @@ export const assets = [
     purchaseDate: '2020-12-20',
     warrantyExpiry: '2023-12-20',
     value: 4100,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
 
   {
@@ -98,7 +98,7 @@ export const assets = [
     purchaseDate: '2021-04-10',
     warrantyExpiry: '2024-04-10',
     value: 1500,
-    usageType: 'Shared',
+    usage: 'Shared',
   },
   {
     id: 10,
@@ -109,7 +109,7 @@ export const assets = [
     purchaseDate: '2022-09-25',
     warrantyExpiry: '2025-09-25',
     value: 1000,
-    usageType: 'Shared',
+    usage: 'Shared',
   },
   {
     id: 11,
@@ -120,7 +120,7 @@ export const assets = [
     purchaseDate: '2020-05-15',
     warrantyExpiry: '2023-05-15',
     value: 900,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
   {
     id: 12,
@@ -131,7 +131,7 @@ export const assets = [
     purchaseDate: '2023-01-15',
     warrantyExpiry: '2026-01-15',
     value: 1300,
-    usageType: 'Critical',
+    usage: 'Critical',
   },
 
   {
@@ -143,7 +143,7 @@ export const assets = [
     purchaseDate: '2022-11-12',
     warrantyExpiry: '2025-11-12',
     value: 1200,
-    usageType: 'Personal',
+    usage: 'Personal',
   },
   {
     id: 14,
@@ -154,7 +154,7 @@ export const assets = [
     purchaseDate: '2021-08-05',
     warrantyExpiry: '2024-08-05',
     value: 1100,
-    usageType: 'Shared',
+    usage: 'Shared',
   },
   {
     id: 15,
@@ -165,7 +165,7 @@ export const assets = [
     purchaseDate: '2023-04-05',
     warrantyExpiry: '2026-04-05',
     value: 2000,
-    usageType: 'Critical',
+    usage: 'Critical',
   },
   {
     id: 16,
@@ -176,7 +176,7 @@ export const assets = [
     purchaseDate: '2022-02-12',
     warrantyExpiry: '2025-02-12',
     value: 950,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
 
   {
@@ -188,7 +188,7 @@ export const assets = [
     purchaseDate: '2023-02-10',
     warrantyExpiry: '2026-02-10',
     value: 4200,
-    usageType: 'Personal',
+    usage: 'Personal',
   },
   {
     id: 18,
@@ -199,7 +199,7 @@ export const assets = [
     purchaseDate: '2022-07-15',
     warrantyExpiry: '2025-07-15',
     value: 2800,
-    usageType: 'Shared',
+    usage: 'Shared',
   },
   {
     id: 19,
@@ -210,7 +210,7 @@ export const assets = [
     purchaseDate: '2023-01-05',
     warrantyExpiry: '2026-01-05',
     value: 3000,
-    usageType: 'Personal',
+    usage: 'Personal',
   },
   {
     id: 20,
@@ -221,7 +221,7 @@ export const assets = [
     purchaseDate: '2023-03-20',
     warrantyExpiry: '2026-03-20',
     value: 3500,
-    usageType: 'Testing',
+    usage: 'Testing',
   },
 
   {
@@ -233,7 +233,7 @@ export const assets = [
     purchaseDate: '2022-10-10',
     warrantyExpiry: '2025-10-10',
     value: 400,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
   {
     id: 22,
@@ -244,7 +244,7 @@ export const assets = [
     purchaseDate: '2023-01-20',
     warrantyExpiry: '2026-01-20',
     value: 600,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
   {
     id: 23,
@@ -255,7 +255,7 @@ export const assets = [
     purchaseDate: '2021-11-25',
     warrantyExpiry: '2024-11-25',
     value: 850,
-    usageType: 'Critical',
+    usage: 'Critical',
   },
   {
     id: 24,
@@ -266,7 +266,7 @@ export const assets = [
     purchaseDate: '2022-08-18',
     warrantyExpiry: '2025-08-18',
     value: 500,
-    usageType: 'Testing',
+    usage: 'Testing',
   },
   {
     id: 25,
@@ -277,7 +277,7 @@ export const assets = [
     purchaseDate: '2023-05-12',
     warrantyExpiry: '2026-05-12',
     value: 700,
-    usageType: 'Backup',
+    usage: 'Backup',
   },
 ]
 

@@ -4,18 +4,24 @@ import Dashboard from './components/Dashboard.vue'
 import { assets, categories } from './data/assetData.js'
 import './assets/app.css';
 
+// Use a ref for the raw assets data
+const rawAssets = ref(assets)
+
 const assetData = ref({
-  assets: assets,
+  assets: rawAssets,
   categories: categories,
-  departments: computed(() => [...new Set(assets.map(asset => asset.department))]),
+  departments: computed(() => [...new Set(rawAssets.value.map(asset => asset.department))]),
   statusOptions: ['In Use', 'Storage', 'Under Repair', 'Disposal'],
-  totalValue: computed(() => assets.reduce((sum, asset) => sum + asset.value, 0)),
-  assetCount: computed(() => assets.length)
+  totalValue: computed(() => rawAssets.value.reduce((sum, asset) => sum + asset.value, 0)),
+  assetCount: computed(() => rawAssets.value.length)
 })
 
 const updateAsset = (updatedAsset) => {
-  const index = assetData.value.assets.findIndex(a => a.assetID === updatedAsset.assetID)
-  if (index !== -1) assetData.value.assets[index] = updatedAsset
+  const index = rawAssets.value.findIndex(a => a.id === updatedAsset.id)
+  if (index !== -1) {
+    // Update the department in the original asset
+    rawAssets.value[index].department = updatedAsset.newDepartment
+  }
 }
 </script>
 

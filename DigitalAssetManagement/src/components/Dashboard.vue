@@ -9,7 +9,13 @@ import {
   Edit
 } from '@element-plus/icons-vue';
 import '../assets/dashboard.css';
+// Add these imports
+import AssetDistribution from './chart/AssetDistribution.vue'
+import AssetByCategory from './chart/AssetByCategory.vue'
+import VueApexCharts from 'vue3-apexcharts'
 
+// Register the ApexCharts component
+const apexchart = VueApexCharts
 defineProps({
   assetData: {
     type: Object,
@@ -17,7 +23,12 @@ defineProps({
   }
 })
 
-defineEmits(['update-asset', 'add-asset'])
+const emit = defineEmits(['update-asset'])
+
+// Simply forward the event to parent (App.vue)
+const handleAssetUpdate = (updatedAsset) => {
+  emit('update-asset', updatedAsset)
+}
 </script>
 
 <template>
@@ -83,22 +94,21 @@ defineEmits(['update-asset', 'add-asset'])
     </el-row>
 
     <el-row :gutter="20" class="mb-6">
+<!-- In your dashboard.vue, replace the Asset Distribution card with this: -->
+<el-col :xs="24" :sm="12">
+  <el-card shadow="hover" :body-style="{ padding: '20px', height: '100%' }">
+    <h3 class="text-lg font-semibold mb-4">Asset Distribution</h3>
+    <AssetDistribution 
+    :assetData="assetData"
+    @update-asset="handleAssetUpdate"
+  />
+  </el-card>
+</el-col>
       <el-col :xs="24" :sm="12">
-        <el-card shadow="hover" :body-style="{ padding: '20px', height: '300px' }">
-          <h3 class="text-lg font-semibold mb-4">Asset Distribution</h3>
-          <!-- Graph placeholder -->
-          <div class="h-full flex items-center justify-center bg-gray-100 rounded">
-            <span class="text-gray-400">Chart Placeholder</span>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="12">
-        <el-card shadow="hover" :body-style="{ padding: '20px', height: '300px' }">
+        <el-card shadow="hover" :body-style="{ padding: '20px', height: '100%' }">
           <h3 class="text-lg font-semibold mb-4">Status Overview</h3>
           <!-- Graph placeholder -->
-          <div class="h-full flex items-center justify-center bg-gray-100 rounded">
-            <span class="text-gray-400">Chart Placeholder</span>
-          </div>
+          <AssetByCategory :assetData="assetData" />
         </el-card>
       </el-col>
     </el-row>
@@ -113,9 +123,7 @@ defineEmits(['update-asset', 'add-asset'])
         </el-card>
       </el-col>
     </el-row>
-
-    <!-- Asset Status Summary Card -->
- <div class="mb-6">
+    <div class="mb-6">
     <el-card shadow="hover" :body-style="{ padding: '20px' }">
       <div class="flex justify-between items-center mb-4">
         <!-- Left: Document Icon + Title -->
@@ -124,10 +132,10 @@ defineEmits(['update-asset', 'add-asset'])
         </div>
       </div>
       <!-- Status Table -->
-      <el-table :data="Object.entries(statusCounts)" style="width: 100%">
+      <!-- <el-table :data="Object.entries(statusCounts)" style="width: 100%">
         <el-table-column prop="0" label="Status" />
         <el-table-column prop="1" label="Count" />
-      </el-table>
+      </el-table> -->
     </el-card>
 
     <!-- Table Cards - 2 per row -->
@@ -143,6 +151,6 @@ defineEmits(['update-asset', 'add-asset'])
       </el-col>
     </el-row>
   </div>
+  </div>
 </template>
-
 
