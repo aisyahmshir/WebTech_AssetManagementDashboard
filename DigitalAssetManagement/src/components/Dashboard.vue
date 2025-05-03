@@ -114,6 +114,22 @@ defineEmits(['update-asset', 'add-asset'])
       </el-col>
     </el-row>
 
+    <!-- Asset Status Summary Card -->
+ <div class="mb-6">
+    <el-card shadow="hover" :body-style="{ padding: '20px' }">
+      <div class="flex justify-between items-center mb-4">
+        <!-- Left: Document Icon + Title -->
+        <div class="flex items-center gap-2">
+          <h3 class="text-lg font-semibold m-0">Asset Status Summary</h3>
+        </div>
+      </div>
+      <!-- Status Table -->
+      <el-table :data="Object.entries(statusCounts)" style="width: 100%">
+        <el-table-column prop="0" label="Status" />
+        <el-table-column prop="1" label="Count" />
+      </el-table>
+    </el-card>
+
     <!-- Table Cards - 2 per row -->
     <el-row :gutter="20" class="mb-6">
       <el-col :xs="24" :sm="12" v-for="(table, index) in 2" :key="index">
