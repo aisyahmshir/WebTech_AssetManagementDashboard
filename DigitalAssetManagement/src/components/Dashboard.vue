@@ -13,6 +13,7 @@ import '../assets/dashboard.css';
 import AssetDistribution from './chart/AssetDistribution.vue'
 import AssetByCategory from './chart/AssetByCategory.vue'
 import VueApexCharts from 'vue3-apexcharts'
+import AssetBreakdown from './chart/AssetBreakdown.vue'
 
 // Register the ApexCharts component
 const apexchart = VueApexCharts
@@ -101,7 +102,11 @@ const handleAssetUpdate = (updatedAsset) => {
     <AssetDistribution 
     :assetData="assetData"
     @update-asset="handleAssetUpdate"
-  />
+    />
+    <AssetBreakdown 
+    :assetData="assetData"
+    @update-asset="handleAssetUpdate"
+    />
   </el-card>
 </el-col>
       <el-col :xs="24" :sm="12">

@@ -20,7 +20,13 @@ const updateAsset = (updatedAsset) => {
   const index = rawAssets.value.findIndex(a => a.id === updatedAsset.id)
   if (index !== -1) {
     // Update the department in the original asset
-    rawAssets.value[index].department = updatedAsset.newDepartment
+    if (updatedAsset.newDepartment) {
+      rawAssets.value[index].department = updatedAsset.newDepartment
+    }
+    // Handle purchase date updates (from AssetBreakdown)
+    if (updatedAsset.purchaseDate) {
+      rawAssets.value[index].purchaseDate = updatedAsset.purchaseDate
+    }
   }
 }
 </script>
